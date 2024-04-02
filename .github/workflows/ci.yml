@@ -17,8 +17,6 @@ jobs:
         uses: actions/checkout@v3
       - name: install Go
         uses: actions/setup-go@v3
-        with:
-          go-version: 1.21.8
       - name: verify license
         run: hack/verify-license.sh
       - name: vendor
@@ -42,8 +40,6 @@ jobs:
           path: ${{ env.GOPATH }}/src/github.com/karmada-io/karmada
       - name: install Go
         uses: actions/setup-go@v3
-        with:
-          go-version: 1.21.8
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
         with:
@@ -74,8 +70,6 @@ jobs:
           fetch-depth: 0
       - name: install Go
         uses: actions/setup-go@v3
-        with:
-          go-version: 1.21.8
       - name: compile
         run: make all
   test:
@@ -89,8 +83,6 @@ jobs:
         uses: actions/checkout@v3
       - name: install Go
         uses: actions/setup-go@v3
-        with:
-          go-version: 1.21.8
       - name: make test
         run: make test
       - name: Upload coverage to Codecov
